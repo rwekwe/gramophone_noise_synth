@@ -14,4 +14,6 @@ width="700px"></p>
 
 Listen to our [audio samples](http://research.spa.aalto.fi/publications/papers/dafx22-gramophone-synth/)
 
+## Usage
+To easily test our pretrained model, we recommend using the colab notebook. 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/eloimoliner/gramophone_noise_synth/blob/main/colab/demo.ipynb)
