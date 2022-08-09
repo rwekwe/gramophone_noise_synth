@@ -1,3 +1,5 @@
+# Realistic Gramophone Noise Synthesis using a diffusion model
+
 Official repository of the paper:
 
 > E. Moliner and V. Välimäki,, "Realistic Gramophone Noise Synthesis using a diffusion model", in Proceedings of the 25th International Conference on Digital Audio Effects (DAFx20in22), Vienna, Austria, September 2022
