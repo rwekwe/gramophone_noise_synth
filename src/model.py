@@ -51,7 +51,7 @@ class RFF_MLP_Block(nn.Module):
               (shape: [B, 64], dtype: float32)
         """
         freqs = self.RFF_freq
-        freqs = freqs.to(device=torch.device("cuda"))
+        #freqs = freqs.to(device=torch.device("cuda"))
         table = 2 * np.pi * sigma * freqs
         table = torch.cat([torch.sin(table), torch.cos(table)], dim=1)
         return table

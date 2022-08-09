@@ -10,10 +10,10 @@ from tqdm import tqdm
 from glob import glob
 
 #from dataset import from_path as dataset_from_path
-from getters import get_sde
+from src.getters import get_sde
 import time
-from inference import  GramophoneSampler
-import utils
+from src.inference import  GramophoneSampler
+import src.utils as utils
 
 
 class Learner:
@@ -113,11 +113,6 @@ class Learner:
             
             y=y.to(device)
 
-            #features = _nested_map(
-            #    features,
-            #    lambda x: x.to(device) if isinstance(
-            #        x, torch.Tensor) else x,
-            #)
             loss, vectorial_loss, t= self.train_step(y)
 
             if torch.isnan(loss).any():
@@ -133,10 +128,7 @@ class Learner:
                 self._write_summary(self.step)
 
             if self.step % self.args.save_interval==0:
-                #self.test_set_evaluation()
 
-                #self._write_test_summary(self.step)
-                #sample and log sample results, consider also the evaluation this guy is doing
                 res=self.sample()
                 
                 self._write_summary_test(res,self.step)
@@ -187,6 +179,7 @@ class Learner:
         writer.add_image('val/spec', utils.generate_images(res), step, dataformats='WHC')
         writer.flush()
         self.summary_writer = writer
+
     def _write_summary(self, step):
         loss_in_bins_train = np.divide(
             self.sum_loss_in_bins_train, self.num_elems_in_bins_train

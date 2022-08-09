@@ -1,4 +1,4 @@
-from sde import SDE, VpSdeSigmoid, VpSdeCos, GeneralizedSubVpSdeCos, SubVpSdeCos
+from src.sde import SDE, VpSdeSigmoid, VpSdeCos, GeneralizedSubVpSdeCos, SubVpSdeCos
 
 
 def get_sde(sde_type: str, sde_kwargs) -> SDE:
